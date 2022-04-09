@@ -1,0 +1,130 @@
+/*
+common
+**************************************/
+
+html,
+body {
+    height: 100;
+}
+
+.content{
+    max-width: 600px;
+    height: 100;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;       
+}
+/*
+posts
+*************************************/
+
+.post_form {
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.post_form input {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.post_form textarea {
+    width: 70%;;
+}
+
+.post ul {
+    padding: 0;
+}
+
+.post li {
+    display: flex;
+    position: relative;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 17px;
+}
+.posts li .logo {
+    flex-basis: 15%;
+}
+
+.post li .logo img {
+    width: 79px;
+}
+.name_body {
+    margin-left: 28px;
+}
+.posts li .name_body {
+    flex-basis: 85%
+}
+
+.post li .name_body .name {
+    font-weight: bold; 
+}
+
+.post li .name_body .datetime {
+    color: gray;
+} 
+img.menu_icon.js-menu-icon {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .post li .name_body .name {
+        font-style: 40px;
+    }
+}
+
+
+.post li .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+
+.header img {
+    width: 60px;
+    
+}
+
+.header {
+    display: flex;
+}
+
+.h1 {
+    padding: 4%;
+    border-bottom: 1px solid #ccc;
+    font-family: sans-serif;
+}
+
+.submit_form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+.submit_edit_form{
+    display: flex;
+    margin-top: 6%;
+}
+
+.submit_edit_form #file{
+    width: 40%;
+}
+.submit_edit_form a{
+    margin-left: 25%;
+}
+.submit_edit_form .tweet{
+    width: 15%;
+    margin-left: 5%;
+}

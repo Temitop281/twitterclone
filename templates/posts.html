@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section class="content">
+    <section class="header">
+        <img src="{% static 'img/techis-logo.png' %}" />
+        <h1>Home</h1>
+    </section>
+    <section class="post_form">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder=" Your Name" required>
+            <textarea name="body" placeholder="What is happening ?" required></textarea>
+            
+            <div class="submit_form">
+                <input type="file" name="image" id="file" style="width:50%" >
+                <input type="submit" value="Tweet" style="width: 15%"/>
+            </div>
+ 
+        </form>
+    </section>
+
+    <section class="post">
+       
+        <ul>
+            {% for post in posts %}
+            <li>
+                <div class="logo">
+                    <img src="{% static 'img/man.png' %}" />
+                </div>
+                <div class="name_body">
+                    <div class="name">{{ post.name }}</div>
+                    <div class="datetime">{{post.created_at }}</div>
+                    <p>{{post.body }}</p>
+                       
+                    {% if post.image.url %}
+                    <img src="{{ post.image.url }}" alt="" style="width: 100%;">
+                    {% endif %}
+                     
+                    <a href="/like/{{post.id}}/"><img src="{% static 'img/heart.png' %}" style="width: 30px;"></a>
+                    {{post.like}}
+
+                    <img class="menu_icon js-menu-icon" src="{% static 'img/option.png' %}"/>
+                    <div class="menu">
+                         <a href="/delete/{{ post.id }}/">delete</a>
+                         <a href="/edit/{{ post.id }}/">edit</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script src="{%static 'js/posts.js/' %}"></script>
+
+</section>
+
+{% endblock %}
