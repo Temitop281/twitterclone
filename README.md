@@ -1,5 +1,5 @@
 # Twitter-Clone
-This is my Twitter Clone Project you can see the [Live Deployment](https://twittercone.herokuapp.com/)
+This is my Twitter Clone Project you can see the [Live Deployment](https://temi-twitter.herokuapp.com/)
 # Technologies Used
  - Django
  - HTML
